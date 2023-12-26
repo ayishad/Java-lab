@@ -1,5 +1,3 @@
-//Program in Java to display the multiplication table of a given integer.
-
 import java.util.Scanner;
 
 public class MultiplicationTable
@@ -15,3 +13,4 @@ public class MultiplicationTable
 		}
 	}
 }
+
