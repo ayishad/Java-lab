@@ -1,25 +1,34 @@
-//Program to print Fibonacci series upto a given number.
 import java.util.Scanner;
 
-public class FibonacciSeries
+class FibonacciSeries
 {
-    public  static void main(String args[])
-	 {
-	   
-	        Scanner reader = new Scanner(System.in);
-		System.out.print("\nEnter the number of terms of the Series:  ");
-		int num = reader.nextInt();
-		int term1 = 0;
-		int term2 = 1;
-		int temp = 0;
-		System.out.print("\nThe Fibonacci Series is -----------------\n");
-		for(int i = 1; i<= num; i++)
+	int n1,n2;
+	FibonacciSeries()  		// Constructor
+	{
+		n1 = 0;
+		n2 = 1;
+	}
+
+	void series(int n)
+	{
+		int i, next;
+		System.out.print(n1 + "\t" + n2);
+		for(i=1; i <= n-2; i++)
 		{
-			System.out.println("\t" + term1);
-			temp = term1 + term2;
-			term1 = term2;
-			term2 = temp;
+			next = n1 + n2;
+			System.out.print("\t " + next);
+			n1 = n2;
+			n2 = next;
 		}
-		
-	 }
+	}
+
+	public static void main(String args[])
+	{
+		FibonacciSeries fib = new FibonacciSeries();
+		Scanner reader = new Scanner(System.in);
+		System.out.print("\nEnter value for n: ");
+		int n = reader.nextInt();
+		System.out.println("\nThe Fibonacci series for " + n + " is -----\n");
+		fib.series(n);
+}
 }
